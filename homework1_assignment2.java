@@ -50,9 +50,7 @@ public static void printArray(int[] array) {
         return minOfArray;
     }
 
-}
-
- public static int[] calcArray(int[] array) {
+    public static int[] calcArray(int[] array) {
         int sum = 0;
         int average = 0;
         // finding the summation of the given array.
@@ -69,3 +67,34 @@ public static void printArray(int[] array) {
         }
         return arrayOfAverage;
     }
+
+    public static int sumOfEven(int[] array)
+    {
+        int sum = 0;
+        for (int i = 0; i < array.length; i++)
+        {
+            if (i % 2 == 0)
+            {
+                sum += array[i];
+            }
+           
+        }
+       return sum;
+    }
+    
+    public static int sumOfOdd(int[] array)
+    {
+        int sum = 0;
+        for ( int i = 0; i < array.length; i++)
+        {
+            if(i % 2 != 0)
+            {
+                sum += array[i];
+            }
+        }
+        return sum;
+    }
+
+}
+
+
