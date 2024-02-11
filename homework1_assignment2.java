@@ -64,28 +64,21 @@ public static void main(String[] args) {
         int option = input.nextInt();
         
         //Deciding what the action will be based on the option chosen by the user
-        switch (option) {
-            case 1:
-                System.out.println("Minimum of the array is: " + findMin(newArray));
-                System.out.println("Maximum of the array is: " + findMax(newArray));                    
-                break;
-            case 2:
-                int[] diffArray = calcArray(newArray);
-                System.out.println("The differences from the average of each element: ");
-                printArray(diffArray);
-                break;
-            case 3:
-                System.out.println("The sum of the odd indexes is: " + sumOfEvenOrOdd(newArray, false));
-                System.out.println("The sum of the even indexes is: " + sumOfEvenOrOdd(newArray, true));                    
-                break;
-            case 4:
-                System.out.println(" Exiting... ");
-                exit = true;
-                break;
-
-            default:
-                System.out.println("Invalid option! Please choose a valid option.");
-                break;
+        if (option == 1) {
+            System.out.println(" Minimum of the array is: " + findMin(newArray));
+            System.out.println(" Maximum of the array is: " + findMax(newArray));
+        } else if (option == 2) {
+            int[] diffArray = calcArray(newArray);
+            System.out.println("The differences from the average of each element: ");
+            printArray(diffArray);
+        } else if (option == 3) {
+            System.out.println("The sum of the odd indexes is: " + sumOfEvenOrOdd(newArray, false));
+            System.out.println("The sum of the even indexes is: " + sumOfEvenOrOdd(newArray, true));
+        } else if (option == 4) {
+            System.out.println(" Exiting... ");
+            exit = true;
+        } else {
+            System.out.println("Invalid option! Please choose a valid option.");
         }
 
     }
