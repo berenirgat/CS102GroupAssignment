@@ -25,13 +25,12 @@ public class homework1_assignment2 {
 
         Scanner input = new Scanner(System.in);
         boolean exit = false;
-        int size = -1;
 
         // Creating an array and displaying the menu over and over again unntil the user
         // chooses to exit
         while (!exit) {
             boolean firstRun = true;
-
+            int size = -1;
             // Checking whether the input is a positive integer. If the input is not an
             // integer or 0/negative,
             // the program asks for input again
