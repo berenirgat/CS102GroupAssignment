@@ -52,3 +52,20 @@ public static void printArray(int[] array) {
 
 }
 
+ public static int[] calcArray(int[] array) {
+        int sum = 0;
+        int average = 0;
+        // finding the summation of the given array.
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        // finding the average of the given array.
+        average = sum / array.length;
+        System.out.println(average);
+        int arrayOfAverage[] = new int[array.length];
+        // creating a new array of the differences of the numbers in the original array and the average of the new array.
+        for (int i = 0; i < array.length; i++) {
+            arrayOfAverage[i] = array[i] - average;
+        }
+        return arrayOfAverage;
+    }
