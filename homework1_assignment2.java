@@ -2,6 +2,95 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class homework1_assignment2 {
+    
+public static void main(String[] args) {
+    
+    Scanner input = new Scanner(System.in);
+    boolean exit = false;
+    int size = -1;
+    //Creating an array and displaying the menu over and over again unntil the user chooses to exit
+    while (!exit) {
+        
+        boolean firstRun = true;
+
+        while (size < 1) {
+            if (firstRun) {
+            
+                System.out.print("Enter a size for your array: ");
+
+                while (!input.hasNextInt()) {
+    
+                System.out.print("Please enter a positive integer: ");
+                input.next();
+    
+                }
+    
+                size = input.nextInt();
+                firstRun = false;
+
+            }
+
+            else {
+
+                System.out.print("Please enter a positive integer: ");
+
+                while (!input.hasNextInt()) {
+    
+                System.out.print("Please enter a positive integer: ");
+                input.next();
+    
+                }
+    
+                size = input.nextInt();
+
+            }   
+        }
+
+        //Creating a random array based on the size input
+        int[] newArray = createRandomArray(size);
+
+        //Displaying the random array created
+        System.out.print("The randomly generated array is: ");
+        printArray(newArray);
+        System.out.println("");
+
+        //Displaying the options for the menu
+        System.out.println("Operations: ");
+        System.out.println("1: Find the minimum and maximum of the array ");
+        System.out.println("2: Display the difference of each element from the average ");
+        System.out.println("3: Find the sum of elements with odd and even-numbered indexes ");
+        System.out.println("4: Exit ");
+        System.out.print("Please select the operation you want to proceed with: ");
+        int option = input.nextInt();
+        
+        //Deciding what the action will be based on the option chosen by the user
+        switch (option) {
+            case 1:
+                System.out.println("Minimum of the array is: " + findMin(newArray));
+                System.out.println("Maximum of the array is: " + findMax(newArray));                    
+                break;
+            case 2:
+                int[] diffArray = calcArray(newArray);
+                System.out.println("The differences from the average of each element: ");
+                printArray(diffArray);
+                break;
+            case 3:
+                System.out.println("The sum of the odd indexes is: " + sumOfEvenOrOdd(newArray, false));
+                System.out.println("The sum of the even indexes is: " + sumOfEvenOrOdd(newArray, true));                    
+                break;
+            case 4:
+                System.out.println(" Exiting... ");
+                exit = true;
+                break;
+
+            default:
+                System.out.println("Invalid option! Please choose a valid option.");
+                break;
+        }
+
+    }
+    input.close();
+}    
 
 public static int[] createRandomArray(int size) {
 
