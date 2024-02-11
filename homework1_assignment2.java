@@ -134,6 +134,12 @@ public class homework1_assignment2 {
         System.out.println();
     }
 
+    /**
+     * This method aims to detect the greatest integer in the given int array.
+     *
+     * @param arrayEx is the given array that will be tested.
+     * @return the array's greatest element.
+     */
     public static int findMax(int[] arrayEx) {
         int maxOfArray = arrayEx[0];
         // this assumtion for comparing with other index to detect the maximum of the
@@ -146,6 +152,12 @@ public class homework1_assignment2 {
         return maxOfArray;
     }
 
+    /**
+     * This methods aims to detect the smallest integer in the given int array.
+     *
+     * @param arrayEx is the given array that will be tested.
+     * @return the array's smallest element.
+     */
     public static int findMin(int[] arrayEx) {
         int minOfArray = arrayEx[0];
         // this assumtion for comparing with other index to detect the minimum of the
