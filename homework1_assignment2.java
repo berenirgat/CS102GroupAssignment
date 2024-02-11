@@ -13,7 +13,8 @@ public class homework1_assignment2 {
         while (!exit) {
 
             boolean firstRun = true;
-
+            //Checking whether the input is a positive integer. If the input is not an integer or 0/negative,
+            //the program asks for input again
             while (size < 1) {
                 if (firstRun) {
 
@@ -65,20 +66,32 @@ public class homework1_assignment2 {
             int option = input.nextInt();
 
             // Deciding what the action will be based on the option chosen by the user
+
+            //Finding the minimum element and the maximum element of the array
             if (option == 1) {
                 System.out.println(" Minimum of the array is: " + findMin(newArray));
                 System.out.println(" Maximum of the array is: " + findMax(newArray));
-            } else if (option == 2) {
+            } 
+            //Subtracting the average from each element of the array to find the difference
+            //between the elements and the average
+            else if (option == 2) {
                 int[] diffArray = calcArray(newArray);
                 System.out.println("The differences from the average of each element: ");
                 printArray(diffArray);
-            } else if (option == 3) {
+            } 
+            //Calculates the sum of even-numbered indexed elements and odd-numbered indexed elements
+            //seperately
+            else if (option == 3) {
                 System.out.println("The sum of the odd indexes is: " + sumOfEvenOrOdd(newArray, false));
                 System.out.println("The sum of the even indexes is: " + sumOfEvenOrOdd(newArray, true));
-            } else if (option == 4) {
+            } 
+            //Exits the program
+            else if (option == 4) {
                 System.out.println(" Exiting... ");
                 exit = true;
-            } else {
+            } 
+            //Default case
+            else {
                 System.out.println("Invalid option! Please choose a valid option.");
             }
 
