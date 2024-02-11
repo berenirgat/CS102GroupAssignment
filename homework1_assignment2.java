@@ -1,3 +1,21 @@
+/**
+ * Menu-driven Console Application:  
+ * Create an integer array of random numbers in the range [0,100] 
+ * based on the given array size. This array then will be used for the
+ * other operations. The application displays the menu options which are
+ * finding the max/min of the array, displaying how each element of the 
+ * array differs from the average of the array, finding the sum of elements
+ * in odd/even indexes and finally exiting. The menu will be displayed
+ * again until the user chooses to exit. 
+ * 
+ * @author Beren Irgat 
+ *         Elif Su Temirel
+ *         Aybegüm Fatma Çelebi
+ *         Emir Said Bakan
+ *         Merve Topuz
+ * @version 11.02.2024
+ */
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,16 +26,17 @@ public class homework1_assignment2 {
         Scanner input = new Scanner(System.in);
         boolean exit = false;
         int size = -1;
+
         // Creating an array and displaying the menu over and over again unntil the user
         // chooses to exit
         while (!exit) {
-
             boolean firstRun = true;
-            //Checking whether the input is a positive integer. If the input is not an integer or 0/negative,
-            //the program asks for input again
+
+            // Checking whether the input is a positive integer. If the input is not an
+            // integer or 0/negative,
+            // the program asks for input again
             while (size < 1) {
                 if (firstRun) {
-
                     System.out.print("Enter a size for your array: ");
 
                     while (!input.hasNextInt()) {
@@ -26,14 +45,11 @@ public class homework1_assignment2 {
                         input.next();
 
                     }
-
                     size = input.nextInt();
                     firstRun = false;
-
                 }
 
                 else {
-
                     System.out.print("Please enter a positive integer: ");
 
                     while (!input.hasNextInt()) {
@@ -42,9 +58,7 @@ public class homework1_assignment2 {
                         input.next();
 
                     }
-
                     size = input.nextInt();
-
                 }
             }
 
@@ -67,34 +81,34 @@ public class homework1_assignment2 {
 
             // Deciding what the action will be based on the option chosen by the user
 
-            //Finding the minimum element and the maximum element of the array
+            // Finding the minimum element and the maximum element of the array
             if (option == 1) {
                 System.out.println(" Minimum of the array is: " + findMin(newArray));
                 System.out.println(" Maximum of the array is: " + findMax(newArray));
-            } 
-            //Subtracting the average from each element of the array to find the difference
-            //between the elements and the average
+            }
+            // Subtracting the average from each element of the array to find the difference
+            // between the elements and the average
             else if (option == 2) {
                 int[] diffArray = calcArray(newArray);
                 System.out.println("The differences from the average of each element: ");
                 printArray(diffArray);
-            } 
-            //Calculates the sum of even-numbered indexed elements and odd-numbered indexed elements
-            //seperately
+            }
+            // Calculates the sum of even-numbered indexed elements and odd-numbered indexed
+            // elements
+            // seperately
             else if (option == 3) {
                 System.out.println("The sum of the odd indexes is: " + sumOfEvenOrOdd(newArray, false));
                 System.out.println("The sum of the even indexes is: " + sumOfEvenOrOdd(newArray, true));
-            } 
-            //Exits the program
+            }
+            // Exits the program
             else if (option == 4) {
                 System.out.println(" Exiting... ");
                 exit = true;
-            } 
-            //Default case
+            }
+            // Default case
             else {
                 System.out.println("Invalid option! Please choose a valid option.");
             }
-
         }
         input.close();
     }
@@ -126,7 +140,7 @@ public class homework1_assignment2 {
      * @param array the array that will be printed.
      */
     public static void printArray(int[] array) {
-        System.out.print("[ ");
+        System.out.print("{ ");
         for (int j : array) {
             System.out.print(j + " ");
         }
@@ -169,12 +183,13 @@ public class homework1_assignment2 {
         }
         return minOfArray;
     }
+
     /**
      * This method aims to find the average of the given
      * array and make a new array of the differences of the numbers.
      * 
      * @param array takes an array
-     * @param sum  finds the summation of the given array
+     * @param sum finds the summation of the given array
      * @param arrayOfAverage a new array of differences of the numbers and the
      *                       average of the given array.
      */
@@ -189,22 +204,21 @@ public class homework1_assignment2 {
         average = sum / array.length;
         System.out.println(average);
         int arrayOfAverage[] = new int[array.length];
-        // creating a new array of the differences of the numbers in the original array and the average of the new array.
+        // creating a new array of the differences of the numbers in the original array
+        // and the average of the new array.
         for (int i = 0; i < array.length; i++) {
             arrayOfAverage[i] = array[i] - average;
         }
         return arrayOfAverage;
     }
 
-     /**
+    /**
      * This method finds the sums of the even and odd indexes separtely
      * by taking two parameters an array and a boolean variable
      * 
-     * @param array  this method takes an array and finds the even and odd indexes
+     * @param array this method takes an array and finds the even and odd indexes
      *               then sums the numbers present in that indexes
      * @param isEven this method takes a boolean variable and decedices wheter to
-     *               return
-     *               the sum of the even indexes or sum of the odd indexes
      * @return returns the sum of the even indexes if the boolean value is true
      *         otherwise returns the sum of the odd indexes
      */
@@ -224,5 +238,4 @@ public class homework1_assignment2 {
             return oddSum;
         }
     }
-
 }
