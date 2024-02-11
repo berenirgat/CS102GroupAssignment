@@ -25,5 +25,30 @@ public static void printArray(int[] array) {
         System.out.print("}");
         System.out.println();
 }
+    
+        public static int findMax(int[] arrayEx) {
+        int maxOfArray = arrayEx[0];
+        // this assumtion for comparing with other index to detect the maximum of the
+        // array.
+        for (int n = 0; n < arrayEx.length; n++) {
+            if (arrayEx[n] > maxOfArray) {
+                maxOfArray = arrayEx[n];
+            }
+        }
+        return maxOfArray;
+    }
+
+    public static int findMin(int[] arrayEx) {
+        int minOfArray = arrayEx[0];
+        // this assumtion for comparing with other index to detect the minimum of the
+        // array.
+        for (int n = 0; n < arrayEx.length; n++) {
+            if (arrayEx[n] < minOfArray) {
+                minOfArray = arrayEx[n];
+            }
+        }
+        return minOfArray;
+    }
+
 }
 
