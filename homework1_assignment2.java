@@ -196,6 +196,18 @@ public class homework1_assignment2 {
         return arrayOfAverage;
     }
 
+     /**
+     * This method finds the sums of the even and odd indexes separtely
+     * by taking two parameters an array and a boolean variable
+     * 
+     * @param array  this method takes an array and finds the even and odd indexes
+     *               then sums the numbers present in that indexes
+     * @param isEven this method takes a boolean variable and decedices wheter to
+     *               return
+     *               the sum of the even indexes or sum of the odd indexes
+     * @return returns the sum of the even indexes if the boolean value is true
+     *         otherwise returns the sum of the odd indexes
+     */
     public static int sumOfEvenOrOdd(int[] array, boolean isEven) {
         int evenSum = 0;
         int oddSum = 0;
