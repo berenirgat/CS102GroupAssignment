@@ -1,3 +1,4 @@
+
 /**
  * Menu-driven Console Application:  
  * Create an integer array of random numbers in the range [0,100] 
@@ -26,48 +27,49 @@ public class homework1_assignment2 {
         Scanner input = new Scanner(System.in);
         boolean exit = false;
 
+        boolean firstRun = true;
+        int size = -1;
+        // Checking whether the input is a positive integer. If the input is not an
+        // integer or 0/negative,
+        // the program asks for input again
+        while (size < 1) {
+            if (firstRun) {
+                System.out.print("Enter a size for your array: ");
+
+                while (!input.hasNextInt()) {
+
+                    System.out.print("Please enter a positive integer: ");
+                    input.next();
+
+                }
+                size = input.nextInt();
+                firstRun = false;
+            }
+
+            else {
+                System.out.print("Please enter a positive integer: ");
+
+                while (!input.hasNextInt()) {
+
+                    System.out.print("Please enter a positive integer: ");
+                    input.next();
+
+                }
+                size = input.nextInt();
+            }
+        }
+
+        // Creating a random array based on the size input
+        int[] newArray = createRandomArray(size);
+
+        // Displaying the random array created
+        System.out.print("The randomly generated array is: ");
+        printArray(newArray);
+        System.out.println("");
+
         // Creating an array and displaying the menu over and over again unntil the user
         // chooses to exit
         while (!exit) {
-            boolean firstRun = true;
-            int size = -1;
-            // Checking whether the input is a positive integer. If the input is not an
-            // integer or 0/negative,
-            // the program asks for input again
-            while (size < 1) {
-                if (firstRun) {
-                    System.out.print("Enter a size for your array: ");
-
-                    while (!input.hasNextInt()) {
-
-                        System.out.print("Please enter a positive integer: ");
-                        input.next();
-
-                    }
-                    size = input.nextInt();
-                    firstRun = false;
-                }
-
-                else {
-                    System.out.print("Please enter a positive integer: ");
-
-                    while (!input.hasNextInt()) {
-
-                        System.out.print("Please enter a positive integer: ");
-                        input.next();
-
-                    }
-                    size = input.nextInt();
-                }
-            }
-
-            // Creating a random array based on the size input
-            int[] newArray = createRandomArray(size);
-
-            // Displaying the random array created
-            System.out.print("The randomly generated array is: ");
-            printArray(newArray);
-            System.out.println("");
 
             // Displaying the options for the menu
             System.out.println("Operations: ");
@@ -79,6 +81,7 @@ public class homework1_assignment2 {
             int option = input.nextInt();
 
             // Deciding what the action will be based on the option chosen by the user
+            // Repeats until the user exists
 
             // Finding the minimum element and the maximum element of the array
             if (option == 1) {
@@ -108,6 +111,7 @@ public class homework1_assignment2 {
             else {
                 System.out.println("Invalid option! Please choose a valid option.");
             }
+            System.out.println("");
         }
         input.close();
     }
@@ -187,8 +191,8 @@ public class homework1_assignment2 {
      * This method aims to find the average of the given
      * array and make a new array of the differences of the numbers.
      * 
-     * @param array takes an array
-     * @param sum finds the summation of the given array
+     * @param array          takes an array
+     * @param sum            finds the summation of the given array
      * @param arrayOfAverage a new array of differences of the numbers and the
      *                       average of the given array.
      */
@@ -215,7 +219,7 @@ public class homework1_assignment2 {
      * This method finds the sums of the even and odd indexes separtely
      * by taking two parameters an array and a boolean variable
      * 
-     * @param array this method takes an array and finds the even and odd indexes
+     * @param array  this method takes an array and finds the even and odd indexes
      *               then sums the numbers present in that indexes
      * @param isEven this method takes a boolean variable and decedices wheter to
      * @return returns the sum of the even indexes if the boolean value is true
