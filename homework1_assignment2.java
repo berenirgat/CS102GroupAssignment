@@ -201,7 +201,7 @@ public class homework1_assignment2 {
         }
         // finding the average of the given array.
         average = sum / array.length;
-        System.out.println(average);
+        System.out.println("The average of the elements is: " + average);
         int arrayOfAverage[] = new int[array.length];
         // creating a new array of the differences of the numbers in the original array
         // and the average of the new array.
