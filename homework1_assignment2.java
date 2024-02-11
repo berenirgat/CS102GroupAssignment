@@ -169,7 +169,15 @@ public class homework1_assignment2 {
         }
         return minOfArray;
     }
-
+    /**
+     * This method aims to find the average of the given
+     * array and make a new array of the differences of the numbers.
+     * 
+     * @param array takes an array
+     * @param sum  finds the summation of the given array
+     * @param arrayOfAverage a new array of differences of the numbers and the
+     *                       average of the given array.
+     */
     public static int[] calcArray(int[] array) {
         int sum = 0;
         int average = 0;
@@ -181,8 +189,7 @@ public class homework1_assignment2 {
         average = sum / array.length;
         System.out.println(average);
         int arrayOfAverage[] = new int[array.length];
-        // creating a new array of the differences of the numbers in the original array
-        // and the average of the new array.
+        // creating a new array of the differences of the numbers in the original array and the average of the new array.
         for (int i = 0; i < array.length; i++) {
             arrayOfAverage[i] = array[i] - average;
         }
