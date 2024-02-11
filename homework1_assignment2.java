@@ -68,31 +68,29 @@ public static void printArray(int[] array) {
         return arrayOfAverage;
     }
 
-    public static int sumOfEven(int[] array)
+    public static int sumOfEvenOrOdd (int[] array, boolean isEven)
     {
-        int sum = 0;
+        int evenSum = 0;
+        int oddSum = 0;
         for (int i = 0; i < array.length; i++)
         {
             if (i % 2 == 0)
             {
-                sum += array[i];
+                evenSum += array[i];
             }
-           
-        }
-       return sum;
-    }
-    
-    public static int sumOfOdd(int[] array)
-    {
-        int sum = 0;
-        for ( int i = 0; i < array.length; i++)
-        {
-            if(i % 2 != 0)
+            else
             {
-                sum += array[i];
+                oddSum += array[i];
             }
         }
-        return sum;
+        if(isEven)
+        {
+            return evenSum;
+        }
+        else
+        {
+            return oddSum;
+        }
     }
 
 }
